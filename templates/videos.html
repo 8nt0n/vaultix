@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+
+<html style="width: 100%; height: 100%;">
+
+    <head>
+        <!--hehe straight copy and paste-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='scrollbar.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='animations.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='4.css') }}">
+
+
+        <link rel="icon" type="image/x-icon" href="../static/img/icons/movies.png">
+        <title>Videos</title>
+    </head>
+
+    <body style="background-image: url({{ url_for('static', filename='img/overlay.svg') }}); ">
+
+        <img src="{{ url_for('static', filename='img/Videos.png') }}" class="header">
+        
+
+        <p style="margin: -5px 7px;">You may like...</p>
+        
+        <!--Whole scroll shit-->
+        <div class="wrapper">
+
+            <div class="button-wrapper">
+                <!--scroll left-->
+                <button onclick="document.querySelector('.outer-container').scrollBy({left: -1521, behavior: 'smooth'})" class="scroll-button"><</button>
+
+                <!--scroll right-->
+                <button onclick="document.querySelector('.outer-container').scrollBy({left: 1521, behavior: 'smooth'})" class="scroll-button">></button>
+            </div>
+            
+            <div class="outer-container">
+                <div class="section" style="width: 5070px;">
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                    <div></div>
+                </div>
+            </div>
+        </div>
+
+    </body>
+
+</html>

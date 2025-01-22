@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <!--hehe straight copy and paste-->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='general.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='scrollbar.css') }}">
+
+        <link rel="icon" type="image/x-icon" href="../static/img/logo.png">
+        <title>Login</title>
+    </head>
+
+    <body style="display: flex; align-items: center; justify-content: center;">
+
+        <form action="/login" method="post" style="display: flex; align-items: center; justify-content: center; flex-direction: column; background-color: #ffffff21; padding: 40px 80px; border-radius: 20px;">
+
+            <p style="font-size: 3rem;">Login</p>
+
+            <br>
+            <br>
+
+            <div class="form-group">
+                <input autocomplete="off" autofocus name="username" placeholder="Username" type="text" style="margin-bottom: 10px; border: 0px; outline: 0px; background-color: #ffffff21; padding: 20px 40px; border-radius: 20px; color: #858585; font-size: 1.3rem;">
+            </div>
+            <div class="form-group">
+                <input name="password" placeholder="Password" type="password" style="margin-bottom: 10px; border: 0px; outline: 0px; background-color: #ffffff21; padding: 20px 40px; border-radius: 20px; color: #858585; font-size: 1.3rem;">
+            </div>
+
+            <div>
+                <button type="submit" style="padding: 15px 50px; border-radius: 20px; border: none; background: rgb(29,92,170); background: linear-gradient(32deg, rgba(29,92,170,1) 0%, rgba(29,146,252,1) 100%); box-shadow: 0px 0px 10px rgba(29,146,252,1); transition: all 0.5s; color:white; margin-top: 20px; cursor: pointer; font-size: 1.5em;">Login</button>
+                <a href="/register" style="text-decoration: none; color: #ffffff; font-size: 1.5rem; border-radius: 20px; margin-left: 15px; padding: 14px 32px; background: rgb(170,29,157); background: linear-gradient(32deg, rgba(170,29,157,1) 0%, rgba(220,29,252,1) 100%); box-shadow: 0px 0px 10px rgba(170,29,157,1);">Register</a>
+            </div>
+        </form>
+
+    </body>
+
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+        <!--Inter font-->
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet"> <!--Inter-->
+
+        <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400..800;1,400..800&display=swap" rel="stylesheet"> <!--EB Garamond-->
+
+        <link rel="stylesheet" href="../static/general.css">
+        <script src="../static/scripts/render_data.js"></script>
+        <script src="../static/scripts/bible.js"></script>
+        <script src="/AppIndex_script"></script>
+
+        <!--Taskbar script-->
+        <script src="../static/scripts/taskbar.js"></script>
+
+        <title>Vaultix</title>
+        <link rel="icon" type="image/x-icon" href="../static/img/favicon.png">
+
+        <!--Apps / Widgets-->
+        <script src="../static/@apps/calender/calender.js"></script>
+        <script src="../static/@apps/media/media.js"></script>
+        <script src="../static/@apps/AppStore/AppStore.js"></script>
+
+    </head>
+
+
+    
+    <body>
+
+        <video width="100%" height="100%" autoplay="autoplay" loop muted class="animated-background">
+            <source src="../static/vid/background.mp4" type="video/mp4" />
+        </video>
+          
+        <!--Taskbar-->
+        <div class="taskbar">
+            <img src="../static/img/taskbar/Profile.png">
+            <img src="../static/img/taskbar/Settings.png">
+            <img src="../static/img/taskbar/Apps.png">
+            
+            <img src="../static/img/taskbar/Divider.png">
+
+            <img src="../static/img/taskbar/Calender.png" id="taskbar-icon-0">
+            <img src="../static/img/taskbar/Media.png" id="taskbar-icon-1">
+            <img src="../static/img/taskbar/Notes.png" id="taskbar-icon-2">
+            <img src="../static/img/taskbar/Plantera.png" id="taskbar-icon-3">
+            <img src="../static/img/taskbar/Appstore.png" id="taskbar-icon-4">
+        </div>
+
+        <!--date Header-->
+        <p id="header" class="weekday-header">Uhh... shit happend i guess?</p>
+
+
+
+        <script>
+            var OpenWidgets = []
+
+            // hehe
+            function sleep(ms) {
+                return new Promise(resolve => setTimeout(resolve, ms));
+              }
+
+            //get day of the week and apply it to header
+            let header = document.getElementById("header")
+            const weekday = ["Sunday","Monday","Tuesday","Wednesday","Thursday","Friday","Saturday"];
+
+            const d = new Date();
+            let day = weekday[d.getDay()];
+
+            header.innerHTML = day
+
+
+
+            // minimize a widget
+            function minimize(id) {
+                let MinElement = document.getElementById(id)
+                let ClsElementMinimize = document.getElementById(id+"-minimize");
+
+                MinElement.style.transition = "height 0.5s";
+
+                if(window.getComputedStyle(MinElement).height == "45px"){
+                    MinElement.style.height = original_height[id];
+                    ClsElementMinimize.style.transform = "rotate(0deg)"
+                }
+                else{
+                    MinElement.style.height = "45px"
+                    ClsElementMinimize.style.transform = "rotate(180deg)"
+                }
+            }
+            
+            //close a widget
+            async function closeElement(id) {
+                
+                let ClsElement = document.getElementById(id);
+                let ClsElementHeader = document.getElementById(id+"-header");
+                
+                ClsElement.style.animation = "moveAndShrink 0.1s forwards"
+                ClsElementHeader.style.animation = "moveAndShrink  0.1s forwards"
+
+                //remove from open apps
+                console.log(id)
+
+                id = id.slice(0, -7); // remove -widget from app == last 7 letters
+
+                let index = OpenWidgets.indexOf(`${id}`);
+                if (index > -1) { // only splice array when item is found
+                    OpenWidgets.splice(index, 1); // 2nd parameter means remove one item only
+}
+                await sleep(100); // Pause for 1 second top play animation
+
+
+                ClsElement.remove()
+            }
+
+            function openApp(App) {
+                App = App.slice(0, -7); // remove -widget from app == last 7 letters
+
+                console.log(App)
+                console.log(OpenWidgets)
+
+                if (!OpenWidgets.includes(App)) {
+                    
+                    console.log("opening..." + "__open_" + App + "__")
+                    window["__open_" + App + "__"](); // Calls the function directly
+                }
+
+            }
+            
+
+            //Make the widget draggable
+            function dragElement(elmnt) {
+                var pos1 = 0, pos2 = 0, pos3 = 0, pos4 = 0;
+                if (document.getElementById(elmnt.id + "-header")) {
+                    // if present, the header is where you move the DIV from:
+                    document.getElementById(elmnt.id + "-header").onmousedown = dragMouseDown;
+                } else {
+                    // otherwise, move the DIV from anywhere inside the DIV:
+                    elmnt.onmousedown = dragMouseDown;
+                }
+
+                function dragMouseDown(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // get the mouse cursor position at startup:
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    document.onmouseup = closeDragElement;
+                    // call a function whenever the cursor moves:
+                    document.onmousemove = elementDrag;
+                }
+
+                function elementDrag(e) {
+                    e = e || window.event;
+                    e.preventDefault();
+                    // calculate the new cursor position:
+                    pos1 = pos3 - e.clientX;
+                    pos2 = pos4 - e.clientY;
+                    pos3 = e.clientX;
+                    pos4 = e.clientY;
+                    // set the element's new position:
+                    elmnt.style.top = (elmnt.offsetTop - pos2) + "px";
+                    elmnt.style.left = (elmnt.offsetLeft - pos1) + "px";
+                }
+
+                function closeDragElement() {
+                    // stop moving when mouse button is released:
+                    document.onmouseup = null;
+                    document.onmousemove = null;
+                }
+            }
+
+        </script>
+    </body>
+</html>

@@ -1,0 +1,43 @@
+Movies:
+    title | as Title
+    path | as Path
+    Duration | as Duration #Duration of the movie
+    description | as Description
+    id | as Id #M1, M2, M3 etc?
+
+    Public | as Public #manual
+    Uploader | as Uploader #manual
+    Imdb-rating |as rating# 1-10 
+    Tags[] | as Genres# "#Horror" "#Scary" "#Funny" etc
+
+
+
+
+
+Series:
+    title
+    path
+    Seasons
+    Episodes [] #Eg: Episodes[12, 3, 4, 6]
+    description
+    id
+
+    Uploader[]
+    Imdb-rating
+    Tags[]
+
+
+
+
+#---------------------------Pseud o Code----------------------------#
+
+Dir = input("Directory for the movies?")
+
+For each Movie In Dir:
+    
+    Extract movie name (Crazy cool algorithm?)
+    Make new Dir in streamed/media/movies
+    Copy Path to movie into Folder (own format cuz super cool and misterious)
+
+    Api call to Imdb -> Create info.streamed file
+    Parse info.streamed and data.js

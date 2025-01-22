@@ -1,0 +1,32 @@
+#media-widget {
+    background: rgb(86,86,86);
+    background: radial-gradient(circle, rgba(86,86,86,0.67) 0%, rgba(86,86,86,0.9) 100%);
+
+    width: 382px;
+    height: 438px;
+
+    border: 1px solid #8C8C8C;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 21px #565656;
+
+    position: absolute;
+
+    left: 60px;
+    top: 37px;
+
+    overflow: hidden;
+
+}
+  
+#media-widget-header {
+    cursor: move;
+    background-color: #FFD447;
+    width: 382px;
+    height: 45px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}

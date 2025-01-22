@@ -1,0 +1,101 @@
+p{
+    font-size: 1.8rem;
+    color: white;
+    margin: 0px;
+    text-decoration: none;
+    font-family: Baloo;
+}
+
+/*Font so cool*/
+@font-face {
+    font-family: "Baloo";
+    src: url("../static/fonts/Baloo_Bhaijaan/font.ttf") format("truetype"); /* Adjust the path as needed */
+    font-weight: normal; /* or bold */
+    font-style: normal; /* or italic */
+}
+
+body {
+    background-color: black; 
+    width: 100%; 
+    height: 200%; 
+    margin: 0px; 
+    padding: 0px;
+    background-size: cover; 
+    background-repeat: repeat; 
+
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+    flex-direction: column;
+}
+
+.header {
+    width: 50%; 
+    margin-left: 24%; 
+    margin-top: 5%; 
+    animation: FadeIn 1.5s ease 0s 1 normal forwards;
+    margin-bottom: 350px;
+}
+
+.outer-container {
+    width: 100%;
+    height: 250px;
+    overflow-y: hidden;
+    overflow-x: scroll;
+    scrollbar-width: none; /* Firefox */
+    -ms-overflow-style: none; /* IE 10+ */
+    margin-top: -250px;
+    z-index: 0;
+    border-radius: 10px;
+}
+
+.section {
+    height: 250px;
+    display: flex;
+    align-items: flex-start;
+    justify-content: flex-start;
+}
+
+.section > div {
+    width: 500px;
+    height: 250px;
+    margin-right: 7px;
+    background-color: blue;
+    border-radius: 10px;
+
+}
+
+.scroll-button{
+    margin-top: 50px;
+    border-radius: 10px;
+    height: 250px;
+    width: 70px;
+    font-size: 2rem;
+    border: 0px;
+    background-color: rgba(0, 0, 0, 0.219);
+    z-index: 9999;
+    color: white;
+    font-family: Baloo;
+    transition: all 0.25s;
+}
+
+.scroll-button:hover{
+    background-color: rgba(0, 0, 0, 0.514);
+}
+
+.wrapper {
+    width: 99%;
+    height: 300px;
+    margin-left: 7px;
+    overflow: hidden;
+    border-radius: 10px;
+    margin-top: -25px;
+}
+
+.button-wrapper{
+    width: 100%; 
+    height: 100%; 
+    display: flex; 
+    align-items: center; 
+    justify-content:space-between;
+}

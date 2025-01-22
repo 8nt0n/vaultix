@@ -1,0 +1,221 @@
+#AppStore-widget {
+    background: rgb(255, 255, 255);
+
+    width: 725px;
+    height: 467px;
+
+    border: 1px solid #8C8C8C;
+    border-radius: 20px;
+
+    box-shadow: 0px 0px 21px #565656;
+
+    position: absolute;
+
+    right: 82px;
+    top: 144px;
+
+    overflow: hidden;
+
+}
+  
+#AppStore-widget-header {
+    cursor: move;
+    background-color: #1551D2;
+    width: 725px;
+    height: 45px;
+    border-radius: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+}
+
+
+.sideBar {
+    width: 137px;
+    height: 383px;
+
+    position: absolute;
+    top: 65px;
+    left: 18px;
+
+    background-color: #CACACA;
+    border-radius: 10px;
+}
+
+.sideBar img {
+    margin-top: 11px;
+    margin-left: 9px;
+}
+
+.sideBar img:hover {
+    cursor: pointer;
+}
+
+.searchBar {
+    width: 523px;
+    height: 50px;
+
+    position: absolute;
+    top: 65px;
+    right: 31px;
+
+    background-color: #CACACA;
+    border-radius: 10px;
+}
+
+.SearchInput {
+    width: 212px;
+    height: 34px;
+
+    border: 1px solid #ffff;
+    border-radius: 10px;
+
+    background-color: #CACACA;
+
+    margin-top: 8px;
+    margin-left: 8px;
+
+    box-sizing: border-box;
+    padding: 0px;
+    padding-left: 10px;
+}
+
+.SearchInput:focus {
+    
+    border: 1px solid #ffff;
+
+    background-color: #d4d4d4;
+
+    outline-width: 0;
+
+}
+
+.SearchInput::placeholder {
+    color: #ffff;
+    margin-left: 10px;
+
+    font-weight: bold;
+}
+
+.SearchInput, select, textarea {
+    color: #ffff;
+}
+
+.StoreIcon {
+    position: absolute;
+    top: 8px;
+    right: 16px;
+}
+
+.StoreContainer {
+    width: 523px;
+    height: 318px;
+
+    position: absolute;
+
+    top: 130px;
+    right: 31px;
+
+
+    display: grid;
+    grid-auto-rows: 148px 148px;
+    grid-template-columns: 252px 252px ;
+
+    grid-column-gap: 12px;
+    grid-row-gap: 12px;
+
+    overflow-y: auto;
+    overflow-x: hidden;
+
+}
+
+.StoreContainer::-webkit-scrollbar {
+    width: 3px;
+    background-color: #00000000;
+}
+
+
+.StoreContainer::-webkit-scrollbar-thumb {
+    background-color: blue;    /* color of the scroll thumb */
+    border-radius: 20px;       /* roundness of the scroll thumb */
+    border: 3px solid #CACACA;  /* creates padding around scroll thumb */
+}
+
+
+.AppWidget {
+    height: 148px;
+    width: 252px;
+
+    position: relative;
+
+    border-radius: 7px;
+    border: 1px solid #CACACA;
+
+    background-color: #ffff;
+
+    box-shadow: 3px 3px 4px #00000021;
+
+    transition: all 0.25s;
+}
+
+.AppWidget:hover {
+    box-shadow: 3px 3px 4px #00000049;
+}
+
+.AppWidgetIcon {
+    width: 58px; 
+    height: 58px;
+
+    margin-top: 16px;
+    margin-left: 16px;
+}
+
+.AppWidgetHeader {
+    position: absolute;
+    top: 18px;
+    left: 100px;
+
+    color: black;
+    font-size: 20px;
+    font-weight: 900;
+
+}
+
+.AppWidgetDescription {
+    color: #848484;
+    font-weight: 300;
+    font-size: 11px;
+
+    position: absolute;
+    top: 43px;
+    left: 100px;
+
+    width: 118px;
+}
+
+.AppWidgetInstall {
+    position: absolute;
+    top: 100px;
+    left: 25px;
+}
+
+.AppWidgetGithub {
+    position: absolute;
+    top: 100px;
+    left: 130px;
+}
+
+.AppWidgetGithub:hover {
+    cursor: pointer;
+}
+
+.AppWidgetInstall:hover {
+    cursor: pointer;
+}
+
+.AppStoreCurrentPath{
+    position: absolute;
+    left: 332px;
+    top: 9px;
+}

@@ -1,0 +1,11 @@
+response = ollama.chat(model=model_name, messages=[
+        {"role": "user", "content": 'You are working in the backend of a local plex server, helping to sort video files by extracting the actual movie name out of a filename. Given the file: "The.Nun.II.2023.1080p.WEBRip.1400MB.DD5.1.x264-GalaxyRG.mp4" try to extract the name of the actual movie, removing the metadata. Please only respond with the movie name you guessed. No further reasoning needed.'},
+        {"role": "assistant", "content": "The Nun II"},
+        {"role": "user", "content": 'Given the file: "American.Psycho.2000.Remastered.1080p.BluRay.X264.AC3.Wi.mp4", extract the movie name only.'},
+        {"role": "assistant", "content": "American Psycho"},
+        {"role": "user", "content": 'Please extract the movie name from this file: "Avengers.Endgame.2019.1080p.BluRay.AC3.5.1.x264.mkv"'},
+        {"role": "assistant", "content": "Avengers Endgame"},
+        {"role": "user", "content": 'From the file: "Inception.2010.720p.BluRay.x264.DTS.mkv", what is the actual movie name?'},
+        {"role": "assistant", "content": "Inception"},
+        {"role": "user", "content": f'Given the file: "{file}", extract the movie name only.'}
+    ])

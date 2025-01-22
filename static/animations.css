@@ -1,0 +1,123 @@
+@keyframes Openerd {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0);
+	}
+}
+
+
+@keyframes Openerd2 {
+	0% {
+		opacity: 0;
+		transform: translateX(-100px);
+	}
+
+    25% {
+		opacity: 0;
+		transform: translateX(-500px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateX(0px);
+	}
+}
+
+
+
+
+@keyframes Passive {
+	0%,
+	100% {
+		transform: rotate(0deg);
+		transform-origin: 50% 50%;
+	}
+
+	10% {
+		transform: rotate(1.7deg);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: rotate(0deg);
+	}
+
+	30%,
+	50%,
+	70% {
+		transform: rotate(1deg);
+	}
+
+	80% {
+		transform: rotate(0deg);
+	}
+
+	90% {
+		transform: rotate(3deg);
+	}
+}
+
+
+@keyframes Passive2 {
+	0%,
+	100% {
+		transform: translateX(0);
+	}
+
+	10%,
+	30%,
+	50%,
+	70% {
+		transform: translateX(-9px);
+	}
+
+	20%,
+	40%,
+	60% {
+		transform: translateX(-2px);
+	}
+
+	80% {
+		transform: translateX(-6px);
+	}
+
+	90% {
+		transform: translateX(-3px);
+	}
+}
+
+@keyframes navbar {
+	0% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+    50% {
+		opacity: 0;
+		transform: translateY(-50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}
+
+
+@keyframes FadeIn {
+	0% {
+		opacity: 0;
+		transform: translateY(50px);
+	}
+
+	100% {
+		opacity: 1;
+		transform: translateY(0);
+	}
+}

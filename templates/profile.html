@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+
+<html style="overflow: hidden;">
+    <head>
+        <!--hehe straight copy and paste-->
+        <meta name="viewport" content="width=device-width, initial-scale=0.8">
+
+        <!--Stylesheets-->
+        <link rel="stylesheet" href="{{ url_for('static', filename='general.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='animations.css') }}">
+        <link rel="stylesheet" href="{{ url_for('static', filename='scrollbar.css') }}">
+
+        <link rel="icon" type="image/x-icon" href="../static/img/logo.png">
+        <title>Profile</title>
+    </head>
+
+    <body style="display: flex; align-items: center; justify-content: center;">
+
+        <!--Navbar-->
+        <div class="navbar">
+            <img src="{{ url_for('static', filename='img/logo2.svg') }}" alt="logo" style="height: 90%; margin: 5px 15px;">
+            <input type="text" placeholder="search" class="search">
+        </div>
+
+        <a href="/" class="Profile">
+            <img src="{{ url_for('static', filename='img/home.svg') }}" style="width: 242px;">
+        </a>
+
+        <!--Topscreen-->
+        <div class="topscreen">
+
+            <div class="opener-wrapper">
+                <img src="{{ url_for('static', filename='img/opener_desktop4.svg') }}" class="openerd2">
+            </div>
+            
+            <div class="opener-wrapper">
+                <img src="{{ url_for('static', filename='img/opener_desktop3.svg') }}" style="height: 100%; width: 100%;" class="openerd">
+            </div>
+
+        </div>
+
+        <div class="Upload">
+
+        </div>
+
+
+    </body>
+
+</html>
